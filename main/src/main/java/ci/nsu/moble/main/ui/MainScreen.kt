@@ -19,13 +19,15 @@ import androidx.navigation.compose.rememberNavController
 sealed class LunchTrayScreen(val title: String){
     data object History : LunchTrayScreen("history")
     data object ScreenOne : LunchTrayScreen("screenOne")
+    data object ScreenTwo : LunchTrayScreen("screenTwo")
 }
 
 @Composable
 fun MainScreen(
     modifier: Modifier = Modifier,
     onHistoryClick: () -> Unit,
-    onScreenOneClick: () -> Unit
+    onScreenOneClick: () -> Unit,
+    onScreenTwoClick: () -> Unit
 ){
 
     Box(

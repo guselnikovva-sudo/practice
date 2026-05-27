@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun ScreenOne(
+fun ScreenTwo(
     modifier: Modifier = Modifier,
     onBackClick: () -> Unit
 ) {
@@ -67,7 +67,6 @@ fun ScreenOne(
             },
             modifier = Modifier.fillMaxWidth()
         )
-        Button(onClick = onScreenTwoClick) { }
         Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = onBackClick) {
             Text("Назад")
