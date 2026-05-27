@@ -14,9 +14,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.compose.rememberNavController
+
+sealed class LunchTrayScreen(val title: String){
+    data object History : LunchTrayScreen("history")
+}
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier){
+
+    val navController = rememberNavController()
 
     Box(
         modifier = Modifier.fillMaxSize()
@@ -40,7 +47,7 @@ fun MainScreen(modifier: Modifier = Modifier){
     ){
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             Button(onClick ={}) { Text("Рассчитать") }
-            Button(onClick ={}) { Text("История расчётов") }
+            Button(onClick ={navController.navigate(LunchTrayScreen.History.title)}) { Text("История расчётов") }
         }
 
         Spacer(modifier = Modifier.height(16.dp))
