@@ -18,12 +18,14 @@ import androidx.navigation.compose.rememberNavController
 
 sealed class LunchTrayScreen(val title: String){
     data object History : LunchTrayScreen("history")
+    data object ScreenOne : LunchTrayScreen("screenOne")
 }
 
 @Composable
 fun MainScreen(
     modifier: Modifier = Modifier,
     onHistoryClick: () -> Unit,
+    onScreenOneClick: () -> Unit
 ){
 
     Box(
@@ -47,7 +49,8 @@ fun MainScreen(
         verticalArrangement = Arrangement.Center
     ){
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            Button(onClick = {}) { Text("Рассчитать") }
+            Button(onClick = onScreenOneClick) {
+                Text("Рассчитать") }
             Button(onClick = onHistoryClick) {
                 Text("История расчётов")
             }

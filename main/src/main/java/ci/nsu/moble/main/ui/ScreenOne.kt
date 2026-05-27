@@ -9,13 +9,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun History(
+fun ScreenOne(
     modifier: Modifier = Modifier,
     onBackClick: () -> Unit
 ) {
     Box(modifier = Modifier.fillMaxSize()) {
         Text(
-            text = "История расчётов",
+            text = "Основные параметры",
             fontSize = 30.sp,
             modifier = Modifier
                 .align(Alignment.TopCenter)

@@ -14,6 +14,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import ci.nsu.moble.main.ui.History
 import ci.nsu.moble.main.ui.MainScreen
+import ci.nsu.moble.main.ui.ScreenOne
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,10 +40,15 @@ fun AppNavigation() {
         composable("main") {
             MainScreen(
                 onHistoryClick = { navController.navigate("history") },
+                onScreenOneClick = { navController.navigate("screenOne") },
             )
         }
         composable("history") {
             History(onBackClick = { navController.popBackStack() })
+        }
+
+        composable("screenOne") {
+            ScreenOne(onBackClick = { navController.popBackStack() })
         }
     }
 }
