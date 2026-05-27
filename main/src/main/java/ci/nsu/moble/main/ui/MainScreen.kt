@@ -21,9 +21,10 @@ sealed class LunchTrayScreen(val title: String){
 }
 
 @Composable
-fun MainScreen(modifier: Modifier = Modifier){
-
-    val navController = rememberNavController()
+fun MainScreen(
+    modifier: Modifier = Modifier,
+    onHistoryClick: () -> Unit,
+){
 
     Box(
         modifier = Modifier.fillMaxSize()
@@ -46,13 +47,14 @@ fun MainScreen(modifier: Modifier = Modifier){
         verticalArrangement = Arrangement.Center
     ){
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            Button(onClick ={}) { Text("Рассчитать") }
-            Button(onClick ={navController.navigate(LunchTrayScreen.History.title)}) { Text("История расчётов") }
+            Button(onClick = {}) { Text("Рассчитать") }
+            Button(onClick = onHistoryClick) {
+                Text("История расчётов")
+            }
         }
+            Spacer(modifier = Modifier.height(16.dp))
 
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Button(onClick ={}) { Text("Выход") }
+            Button(onClick = {}) { Text("Выход") }
 
 
     }

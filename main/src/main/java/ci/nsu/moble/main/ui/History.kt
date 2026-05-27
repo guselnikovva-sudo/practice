@@ -7,14 +7,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 
 @Composable
-fun History(modifier: Modifier = Modifier){
-
-    Box(
-        modifier = Modifier.fillMaxSize()
-    ) {
+fun History(
+    modifier: Modifier = Modifier,
+    onBackClick: () -> Unit
+) {
+    Box(modifier = Modifier.fillMaxSize()) {
         Text(
             text = "История расчётов",
             fontSize = 30.sp,
@@ -24,14 +23,17 @@ fun History(modifier: Modifier = Modifier){
         )
     }
 
-
     Column(
         modifier = modifier
             .fillMaxSize()
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
-    ){
-
+    ) {
+        Text("Здесь будет список расчётов")
+        Spacer(modifier = Modifier.height(16.dp))
+        Button(onClick = onBackClick) {
+            Text("Назад")
+        }
     }
 }
